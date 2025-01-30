@@ -1,0 +1,21 @@
+*{
+    --test-color: #ff00ff;
+    --bg-color--layer0: #020e25;
+    --bg-color--layer1: #071637;
+    --bg-color--layer2: #102047;
+    --bg-color--layer3: #162345;
+    --bg-color--layer4: #1f2e55;
+    --bg-color--layer5: #263660;
+    --bg-color--layer6: #35456e;
+    --bg-color--layer7: #495883;
+    --bg-color--layer8: #69779e;
+    --bg-color--layer9: #838faf;
+    --bg-color--layer10: #a3adc8;
+    --bg-color--layer11: #d8ddf1;
+
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Times New Roman", sans-serif;
+}
