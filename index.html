@@ -14,8 +14,7 @@
             overflow: hidden;
             padding: 4px 16px;
             border: 1px solid var(--test-color);
-        }
-            .navBar span{
+            & span{
                 color: var(--bg-color--layer11);
                 font-size: 42px;
                 font-weight: bold;
@@ -23,7 +22,7 @@
                 cursor: default;
                 user-select: none;
             }
-            .navBar nav{
+            & nav{
                 display: flex;
                     justify-content:right;
                     column-gap: 8px;
@@ -31,7 +30,7 @@
                 height: 60px;
                 border: 1px solid var(--test-color);
             }
-            .navBar a{
+            & a{
                 display: inline-block;
                 color: var(--bg-color--layer11);
                 background-image: linear-gradient(0deg, var(--bg-color--layer11),var(--bg-color--layer11));
@@ -51,13 +50,16 @@
                     background-position 0.0s ease,
                     background-size 0.3s ease;
             }
-            .navBar a:hover{
+            & a:hover{
                 background-position: 0% 90%;
                 background-size: 100% 2px;
             }
-            .navBar button{
+            & button{
                 border: 1px solid var(--test-color);
             }
+        }
+            
+            
 
         
 
@@ -78,8 +80,8 @@
             background-size: cover;
             filter: none;
             border: 1px solid var(--test-color);
-        }
-            div.overview>.slogan{
+
+            & .slogan{
                 display: block;
                 font-size: 64px;
                 color: var(--bg-color--layer11);
@@ -89,14 +91,15 @@
                 user-select: none;
             }
 
+        }
+            
         footer{
             display: block;
             position: relative;
             background-color: var(--bg-color--layer2);
             padding: 8px;
             color: var(--bg-color--layer11);
-        }
-            footer>table{
+            & table{
                 display: table;
                 position: relative;
                 padding: 4px;
@@ -106,14 +109,16 @@
                 width: 90%;
                 border-collapse: collapse;
             }
-            footer>table tr>td{
+            & table tr>td{
                 border: 1px  var(--test-color) solid;
                 text-align: center;
             }
-            footer>table tr>th{
+            & table tr>th{
                 padding: 0;
                 border: 1px  var(--test-color) solid;
             }
+        }
+
     </style>
 </head>
 <body>
