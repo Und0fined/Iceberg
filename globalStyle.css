@@ -1,19 +1,19 @@
 *{
     --test-color: #ff00ff;
     --bgColor--layer0: #020e25;
-    --bgColor--layer1: #07132c;
-    --bgColor--layer2: #12234c;
-    --bgColor--layer3: #19274e;
-    --bgColor--layer4: #233562;
-    --bgColor--layer5: #2f3f6b;
-    --bgColor--layer6: #35456e;
-    --bgColor--layer7: #56648b;
-    --bgColor--layer8: #69779e;
-    --bgColor--layer9: #838faf;
-    --bgColor--layer10: #a3adc8;
-    --bgColor--layer11: #c2cae7;
-    --bgColor--layer12: #d8ddf1;
-
+    --bgColor--layer1: #05112c;
+    --bgColor--layer2: #0d1b3c;
+    --bgColor--layer3: #12214d;
+    --bgColor--layer4: #18284e;
+    --bgColor--layer5: #1e2f58;
+    --bgColor--layer6: #263661;
+    --bgColor--layer7: #354572;
+    --bgColor--layer8: #576896;
+    --bgColor--layer9: #6c7eab;
+    --bgColor--layer10: #8f9cc1;
+    --bgColor--layer11: #a4aed3;
+    --bgColor--layer12: #c7cde7;
+    --bgColor--layer13: #d8ddf1;
     padding: 0;
     margin: 0;
     border: 0;
