@@ -99,7 +99,6 @@
 
                 width: 64px;
                 height: 64px;
-                border: 1px solid var(--test-color);
                 cursor: pointer;
                 transform: translate(0,-80px);
 
@@ -384,19 +383,35 @@
                 
                 &>li{
                     display: block;
+                    position: relative;
                     flex: 1 1 0;
                     
                     background-repeat: no-repeat;
                     background-size: cover;
                     background-position: 50%;
-                    background-image:
-                        linear-gradient(0deg, 
-                        rgb(from var(--bgColor--layer0) r g b/50%), 
-                        rgb(from var(--bgColor--layer0) r g b/50%)),
-                        url(./IMG-email.jpg);
-                    border-radius: 16px;
+                    overflow: hidden;
+                    border-radius: 8px;
+                    filter: brightness(100%) drop-shadow(0 0 4px var(--bgColor--layer0));
 
                     transition: 0.2s ease;
+                    &>span.backgroundImage{
+                        display:block;
+                        position:absolute;
+                        z-index: -1;
+                        width: 100%;
+                        height: 100%;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        background-image:
+                            linear-gradient(0deg, 
+                            rgb(from var(--bgColor--layer0) r g b/50%), 
+                            rgb(from var(--bgColor--layer0) r g b/50%)),
+                            url(./IMG-email.jpg);
+                        
+                        filter:blur(2px);
+
+                        transition: 0.2s ease;
+                    }
                     &>h1{
                         padding-top: 16px;
                         text-align: center;
@@ -416,22 +431,26 @@
                         text-decoration: underline;
                     }
                 }
-                &>li:nth-of-type(1){
+                &>li:nth-of-type(1)>span{
                     background-image: linear-gradient(0deg, 
                         rgb(from var(--bgColor--layer0) r g b/50%), 
                         rgb(from var(--bgColor--layer0) r g b/50%)),
                         url(./IMG-phone.jpg);
                 }
-                &>li:nth-of-type(2){
+                &>li:nth-of-type(2)>span{
                     background-image: linear-gradient(0deg, 
                         rgb(from var(--bgColor--layer0) r g b/50%), 
                         rgb(from var(--bgColor--layer0) r g b/50%)),
                         url(./IMG-letters.jpg);
                 }
                 &>li:hover{
-                    filter:brightness(120%);
+                    filter:brightness(120%) drop-shadow(0 0 7px var(--bgColor--layer0));
+                    &>span.backgroundImage{
+                        filter:blur(0);
+                    }
                 }
             }
+
         }
         div.career{
             display: block;  
@@ -580,10 +599,10 @@
 <body>
     <nav class="panelMenu" onmouseleave="panelMenuOff()">
         <input type="text" placeholder="search">
-        <a href="#">Home</a>
-        <a href="#">About Us</a>
-        <a href="#">News</a>
-        <a href="#">Contacts</a>
+        <a href="#home">Home</a>
+        <a href="#aboutUs">About Us</a>
+        <a href="#news">News</a>
+        <a href="#contacts">Contacts</a>
     </nav>
     <div class="navBar--block">
 
@@ -593,21 +612,21 @@
             Iceberg
         </span>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">News</a>
-            <a href="#">Contacts</a>
+            <a href="#home">Home</a>
+            <a href="#aboutUs">About Us</a>
+            <a href="#news">News</a>
+            <a href="#contacts">Contacts</a>
             <input type="text" placeholder="search">
         </nav>
         <button onclick="panelMenuOn()"></button>
     </nav>
     
-    <div class="overview">
+    <div class="overview" id="home">
             <div class="slogan">
                 We don't know what we are doing
             </div>
     </div>
-    <div class="aboutUs">
+    <div class="aboutUs" id="aboutUs">
         <h1>About Us</h1>
         <p>
             An do on frankness so cordially immediate recommend contained. 
@@ -648,7 +667,7 @@
             <a href="#">more...</a>
         </p>
     </div>
-    <div class="news">
+    <div class="news" id="news">
         <h1>News</h1>
         <div class="newsList">
             <li>
@@ -700,10 +719,11 @@
             see more...
         </a>
     </div>
-    <div class="contacts">
+    <div class="contacts" id="contacts">
         <h1>Contacts</h1>
         <ul>
             <li>
+                <span class="backgroundImage" data-url="./IMG-phone"></span>
                 <h1>Phone</h1>
                 <p>
                     <a href="#">Click here</a> for more information on 
@@ -712,6 +732,7 @@
                 </p>
             </li>
             <li>
+                <span class="backgroundImage" data-url="./IMG-letters"></span>
                 <h1>Address</h1>
                 <p>
                     <a href="#">Click here</a> for more information on 
@@ -720,6 +741,7 @@
                 </p>
             </li>
             <li>
+                <span class="backgroundImage" data-url="./IMG-email"></span>
                 <h1>Email</h1>
                 <p>
                     <a href="#">Click here</a> for more information on 
@@ -809,6 +831,7 @@
             console.log("panelMenuOff()");
             document.querySelector('.panelMenu').style.transform='translate(100%,0)';
         }
+        
     </script>
 </body>
 </html>
