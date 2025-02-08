@@ -64,10 +64,12 @@
                 transition: 
                     background-position 0.0s ease,
                     background-size 0.3s ease;
+                    filter: 0.1s ease;
             }
             & a:hover{
                 background-position: 0% 90%;
                 background-size: 100% 2px;
+                filter: brightness(120%);
             }
             & input{
                 display: block;
@@ -127,8 +129,6 @@
                 margin-top: 16px;
                 height: 24px;
                 font-size:24px;
-
-                background-color: var(--bgColor--layer12);
             }
             & a{
                 display: block;
@@ -147,13 +147,15 @@
                 transition:
                     background-position 0.0s ease,
                     background-size 0.2s ease,
-                    text-indent 0.2s ease;
+                    text-indent 0.2s ease,
+                    filter 0.1s ease;
                     
             }
             & a:hover{
                 background-position: 0% 0%;
                 background-size: 3px 100%;
                 text-indent: 16px;
+                filter: brightness(120%);
             }
         }
         div.overview{
@@ -161,21 +163,21 @@
             justify-content: center;
             align-items: center;
             z-index: 0;
-            height: 600px;
+            height: 720px;
             padding: 5vw;
             background-color: var(--bgColor--layer8);
             background-image: 
             linear-gradient(0deg, 
-                    rgb(from var(--bgColor--layer1) r g b / 50%),10%,
+                    rgb(from var(--bgColor--layer1) r g b / 80%),10%,
                     rgb(from var(--bgColor--layer1) r g b / 10%),90%,
-                    rgb(from var(--bgColor--layer9) r g b / 30%)), 
+                    rgb(from var(--bgColor--layer9) r g b / 80%)), 
                     url(IMG-background-city.jpg);
             background-size: cover;
             filter: none;
                     
             & .slogan{
                 display: block;
-                font-size: 64px;
+                font-size: 96px;
                 color: var(--bgColor--layer11);
                 mix-blend-mode:color-dodge;
 
@@ -188,10 +190,13 @@
             display: block;  
             position: relative;
             
-            height: 960px;
+            height: 720px;
             padding: 32px;
             color: var(--bgColor--layer13);
-            background-color: var(--bgColor--layer6);
+            background-image: 
+                linear-gradient(0deg, 
+                rgb(from var(--bgColor--layer2) r g b/100%), 10%,
+                rgb(from var(--bgColor--layer6) r g b/100%));
             text-align: center;
 
             cursor: default;
@@ -212,42 +217,51 @@
                     justify-content:space-evenly;
                     align-items: center;
                     gap: 64px;
-                    &>.card{
-                        display:block;
-                        position:relative;
-                        width: clamp(320px,40vw,640px);
-                        height: 640px;
-                        overflow: hidden;
-                        border-radius: 16px;
-                        background-color: var(--bgColor--layer4);
-                        background-image: url(./IMG-businessTalking.jpg);
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                        border: 1px solid var(--test-color);
-
-                        transition: 0.2s ease;
-                        &>p{
-                            display: block;
-                            position:absolute;
-                                bottom: 0;
-                            
-                            width: 100%;
-                            padding: 16px;
-                            margin: 0;
-                            font-size: 18px;
-                            background-position: 100%;
-                            background-image: linear-gradient(0deg, 
-                                rgb(from var(--bgColor--layer0) r g b/100%),
-                                50%,
-                                rgb(from var(--bgColor--layer0) r g b/0%));
-                        }
-                        & a{
-                            color:var(--bgCOlor--layer11);
-                        }
+                &>.card{
+                    display:block;
+                    position:relative;
+                    width: clamp(320px,40vw,640px);
+                    height: 420px;
+                    overflow: hidden;
+                    border-radius: 16px;
+                    background-color: var(--bgColor--layer4);
+                    background-image: url(./IMG-businessTalking.jpg);
+                    background-position: 50%;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    filter:brightness(80%) drop-shadow(0px 0px 4px var(--bgColor--layer0));
+                    transition: 0.2s ease;
+                    &>p{
+                        display: block;
+                        position:absolute;
+                            bottom: 0;
+                        
+                        width: 100%;
+                        padding: 16px;
+                        margin: 0;
+                        font-size: 24px;
+                        background-position: 100%;
+                        background-image: linear-gradient(0deg, 
+                            rgb(from var(--bgColor--layer0) r g b/100%),
+                            70%,
+                            rgb(from var(--bgColor--layer0) r g b/10%));
                     }
-                    &>.card:hover{
-                        transform: scale(102%);
+                    & a{
+                        color:var(--bgCOlor--layer11);
                     }
+                }
+                &>.card:nth-of-type(2){
+                    background-image: url(./IMG-labs.jpg);
+                    background-position: 50%;
+                }
+                &>.card:hover{
+                    transform: scale(100.4%);
+                    filter:brightness(100%) drop-shadow(0px 0px 8px var(--bgColor--layer0));
+                }
+                &>.card:nth-of-type(2):hover{
+                    transform: scale(100.4%);
+                    filter:brightness(100%) drop-shadow(0px 0px 8px var(--bgColor--layer0));
+                }
             }
             
             
@@ -270,7 +284,7 @@
                 font-size: 32px;
             }
             &>p{
-                width: 80%;
+                width: clamp(360px, 80vw, 960px);
                 margin: auto;
                 font-size: 18px;
                 padding-bottom: 96px;
@@ -291,7 +305,7 @@
                 linear-gradient(0deg, 
                     rgb(from var(--bgColor--layer0) r g b/ 100%), 
                     10%,
-                    rgb(from var(--bgColor--layer0) r g b/ 50%),
+                    rgb(from var(--bgColor--layer0) r g b/ 0%),
                     90%,
                     rgb(from var(--bgColor--layer0) r g b/ 100%)),
                 url(./IMG-news.jpg);
@@ -306,6 +320,45 @@
                 margin-left: 24px;
                 font-size: 42px;
             }
+            &>.newsList{
+                display: flex;
+                    flex-direction: column;
+                position: relative;
+                width: clamp(560px, 80vw, 900px);
+                height: 80%;
+                overflow: auto;
+                &>li{
+                    display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                    flex: 1 0 auto;
+                    background-color: rgb(from var(--bgColor--layer4) r g b/30%);
+                    backdrop-filter: blur(8px);
+                    padding: 8px;
+                    &>a{
+                        flex: 1 1 auto;
+                        color: var(--bgColor--layer13);
+                        font-size: 24px;
+                        height:48px;
+                        text-decoration: none;
+                    }
+                    &>span{
+                        flex: 0 0 auto;
+                        font-size: 18px;
+                    }
+                }
+                &>li:hover{
+                    text-decoration: underline;
+                    background-color: rgb(from var(--bgColor--layer4) r g b/80%);
+                }
+            }
+            &>a{
+                display: block;
+                width: 96px;
+                color:var(--bgColor--layer13);
+                margin-top: 8px;
+                font-size: 18px;
+            }
             
         }
         div.contacts{
@@ -315,7 +368,7 @@
             height: 560px;
             
             color: var(--bgColor--layer13);
-            background-color: var(--bgColor--layer3);
+            background-color: var(--bgColor--layer5);
             text-align: right;
 
             cursor: default;
@@ -323,6 +376,61 @@
             &>h1{
                 padding: 16px;
                 font-size: 42px;
+            }
+            &>ul{
+                display: flex;
+                    gap: 16px;
+                height: 80%;
+                
+                &>li{
+                    display: block;
+                    flex: 1 1 0;
+                    
+                    background-repeat: no-repeat;
+                    background-size: cover;
+                    background-position: 50%;
+                    background-image:
+                        linear-gradient(0deg, 
+                        rgb(from var(--bgColor--layer0) r g b/50%), 
+                        rgb(from var(--bgColor--layer0) r g b/50%)),
+                        url(./IMG-email.jpg);
+                    border-radius: 16px;
+
+                    transition: 0.2s ease;
+                    &>h1{
+                        padding-top: 16px;
+                        text-align: center;
+                    }
+                    &>p{
+                        display: block;
+                        height: 60%;
+                        width: 80%;
+                        margin: auto;
+                        margin-top: 16px;
+                        text-align: center;
+                        font-size: 18px;
+                        text-indent: 16px;
+                    }
+                    & a{
+                        color:var(--bgColor--layer13);
+                        text-decoration: underline;
+                    }
+                }
+                &>li:nth-of-type(1){
+                    background-image: linear-gradient(0deg, 
+                        rgb(from var(--bgColor--layer0) r g b/50%), 
+                        rgb(from var(--bgColor--layer0) r g b/50%)),
+                        url(./IMG-phone.jpg);
+                }
+                &>li:nth-of-type(2){
+                    background-image: linear-gradient(0deg, 
+                        rgb(from var(--bgColor--layer0) r g b/50%), 
+                        rgb(from var(--bgColor--layer0) r g b/50%)),
+                        url(./IMG-letters.jpg);
+                }
+                &>li:hover{
+                    filter:brightness(120%);
+                }
             }
         }
         div.career{
@@ -335,9 +443,11 @@
             background-color: var(--bgColor--layer2);
             background-image: 
                 linear-gradient(0deg, 
-                    rgb(from var(--bgColor--layer0) r g b/ 90%), 
+                    rgb(from var(--bgColor--layer0) r g b/ 90%),
                     10%,
-                    rgb(from var(--bgColor--layer0) r g b/ 50%)),
+                    rgb(from var(--bgColor--layer0) r g b/ 50%), 
+                    90%,
+                    rgb(from var(--bgColor--layer0) r g b/ 90%)),
                 url(./IMG-career.jpg);
             background-repeat: no-repeat;
             background-size: cover;
@@ -356,7 +466,7 @@
                 margin: 16px;
                 padding-left: 16px;
             }
-            &>.jobPositions{
+            &>.jobPositionsList{
                 display: flex;
                     flex-direction: column;
                 position: relative;
@@ -367,9 +477,10 @@
                     position: relative;
                     padding: 8px;
                     color: var(--bgColor--layer13);
-                    background-color: rgb(from var(--bgColor--layer4) r g b/30%) ;
+                    background-color: rgb(from var(--bgColor--layer4) r g b/30%);
                     backdrop-filter: blur(8px);
                     font-size: 24px;
+                    text-decoration: none;
                     &>span{
                         display: inline;
                         position: absolute;
@@ -377,7 +488,8 @@
                     }
                 }
                 &>a:hover{
-                    background-color: var(--bgColor--layer5);
+                    background-color: rgb(from var(--bgColor--layer4) r g b/80%);
+                    text-decoration: underline;
                 }
             }
         }
@@ -389,7 +501,7 @@
             background-color: var(--bgColor--layer1);
             padding: 16px;
             color: var(--bgColor--layer11);
-            & table{
+            &>table{
                 display: table;
                 position: relative;
                 padding: 4px;
@@ -398,11 +510,11 @@
                 width: 90%;
                 border-collapse: collapse;
             }
-            & table tr>td{
+            &>table tr>td{
                 text-align: center;
                 width: 120px;
                 height: 24px;
-                font-size: 14px;
+                font-size: 16px;
                 &>a{
                     color:var(--bgColor--layer10);
                     text-decoration: none;
@@ -411,18 +523,36 @@
                     text-decoration: underline;
                 }
             }
-            & table tr>th{
+            &>table tr>th{
                 width: 120px;
                 height: 32px;
+                font-size: 18px;
                 padding: 0;
             }
             &>div.copyright{
-                display:block;
+                display:flex;
+                    justify-content:space-between;
+                    align-items:end;
                 position: absolute;
-                    bottom: 16px;
-                    right:16px;
-                color: var(--bgColor--layer10);
                 text-align: center;
+                font-size: 14px;
+
+                bottom: 12px;
+                width: 100%;
+                &>span:nth-of-type(1){
+                    flex: 0 0 120px;
+                }
+                &>span{
+                    flex: 1 1 0;
+                    color: var(--bgColor--layer10);
+                }
+                & a{
+                    color: var(--bgColor--layer10);
+                    text-decoration: none;
+                }
+                & a:hover{
+                    text-decoration: underline;
+                }
             }
         }
         @media screen and (max-width: 900px){
@@ -454,7 +584,6 @@
         <a href="#">About Us</a>
         <a href="#">News</a>
         <a href="#">Contacts</a>
-        <a href="#">My Account</a>
     </nav>
     <div class="navBar--block">
 
@@ -468,7 +597,6 @@
             <a href="#">About Us</a>
             <a href="#">News</a>
             <a href="#">Contacts</a>
-            <a href="#">My Account</a>
             <input type="text" placeholder="search">
         </nav>
         <button onclick="panelMenuOn()"></button>
@@ -482,9 +610,14 @@
     <div class="aboutUs">
         <h1>About Us</h1>
         <p>
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-            Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            An do on frankness so cordially immediate recommend contained. 
+            Imprudence insensible be literature unsatiable do. 
+            Of or imprudence solicitude affronting in mr possession. 
+            Compass journey he request on suppose limited of or. 
+            She margaret law thoughts proposal formerly. 
+            Speaking ladyship yet scarcely and mistaken end exertion dwelling. 
+            All decisively dispatched instrument particular way one devonshire.
+            Applauded she sportsman explained for out objection. 
         </p>
         <div class="cardContainer">
             <div class="card">
@@ -517,9 +650,84 @@
     </div>
     <div class="news">
         <h1>News</h1>
+        <div class="newsList">
+            <li>
+                <a href="#">"Sleeping pills may have unexpected effects on the snoozing brain"</a>
+                <span>07-02-2025</span>
+            </li>
+            <li>
+                <a href="#">"Extinct moa ate purple trufflelike fungi, fossil bird droppings reveal"</a>
+                <span>01-02-2025</span>
+            </li>
+            <li>
+                <a href="#">"AI could transform health care, but will it live up to the hype? "</a>
+                <span>29-01-2025</span>
+            </li>
+            <li>
+                <a href="#">"Mathematicians: Out of an Ivory Tower "</a>
+                <span>24-01-2025</span>
+            </li>
+            <li>
+                <a href="#">"Cricket frogs belly flop their way across water "</a>
+                <span>12-01-2025</span>
+            </li>
+            <li>
+                <a href="#">"Beyond Our Universe, the Cthulhu Myth"</a>
+                <span>04-12-2024</span>
+            </li>
+            <li>
+                <a href="#">"How child soldiers heal after the trauma of war"</a>
+                <span>01-11-2024</span>
+            </li>
+            <li>
+                <a href="#">"Sleeping pills may have unexpected effects on the snoozing brain"</a>
+                <span>28-09-2024</span>
+            </li>
+            <li>
+                <a href="#">"Extinct moa ate purple trufflelike fungi, fossil bird droppings reveal"</a>
+                <span>25-08-2024</span>
+            </li>
+            <li>
+                <a href="#">"AI could transform health care, but will it live up to the hype? "</a>
+                <span>22-08-2024</span>
+            </li>
+            <li>
+                <a href="#">"Mathematicians: Out of an Ivory Tower "</a>
+                <span>30-07-2024</span>
+            </li>
+        </div>
+        <a href="#">
+            see more...
+        </a>
     </div>
     <div class="contacts">
         <h1>Contacts</h1>
+        <ul>
+            <li>
+                <h1>Phone</h1>
+                <p>
+                    <a href="#">Click here</a> for more information on 
+                    advertising opportunities with Forbes.com 
+                    and Forbes Magazines.
+                </p>
+            </li>
+            <li>
+                <h1>Address</h1>
+                <p>
+                    <a href="#">Click here</a> for more information on 
+                    advertising opportunities with Forbes.com 
+                    and Forbes Magazines.
+                </p>
+            </li>
+            <li>
+                <h1>Email</h1>
+                <p>
+                    <a href="#">Click here</a> for more information on 
+                    advertising opportunities with Forbes.com 
+                    and Forbes Magazines.
+                </p>
+            </li>
+        </ul>
     </div>
     <div class="career">
         <h1>Career</h1>
@@ -534,7 +742,7 @@
             Placing forming nay looking old married few has. 
             Margaret disposed add screened rendered six say his striking confined. 
         </p>
-        <div class="jobPositions">
+        <div class="jobPositionsList">
             <a href="#">Data Scientist<span>&#x2192</span></a>
             <a href="#">Data Analyst<span>&#x2192</span></a>
             <a href="#">Machine Learning Engineer<span>&#x2192</span></a>
@@ -577,7 +785,20 @@
             </tr>
             
         </table>
-        <div class="copyright">@Copyright Ethand0fined Offical, all right reserved.</div>
+        <div class="copyright">
+            <span>@2025 Ethand0fined Offical. All Rights Reserved.</span>
+            <span>
+                <a href="#">Terms of Service</a> |
+                <a href="#">Privacy Statement</a> |
+                <a href="#">Do Not Sell or Share My Personal Information</a> |
+                <a href="#">Limit the Use of My Sensitive Personal Information</a> |
+                <a href="#">Privacy Preferences</a> |
+                <a href="#">Digital Terms of Sale</a> |
+                <a href="#">Market Data by Morningstar</a> |
+                <a href="#">AdChoices</a> |
+                <a href="#">To report security issues email us at security@forbes.com</a>
+            </span>
+        </div>
     </footer>
     <script>
         function panelMenuOn(){
